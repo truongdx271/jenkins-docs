@@ -67,7 +67,7 @@ yum install jenkins
 vi /etc/sysconfig/jenkins
 
 
-![Selection_029](https://user-images.githubusercontent.com/19284401/55050886-90b27e00-5085-11e9-87c3-b345adddaae0.png)
+![Selection_029](/images/029.png)
 
 
 thay vào đó là thư mục mới VD: JENKINS_HOME="/data" (hãy chắc chắn trong máy của bạn đã có thư mục data)
@@ -96,7 +96,7 @@ firewall-cmd --reload
 
 bạn sẽ có 1 giao diện web như hình.
 
-![unlock-jenkins](https://user-images.githubusercontent.com/19284401/55051106-6a411280-5086-11e9-90c2-e136df1de87d.jpg)
+![unlock-jenkins](/images/unlock_1.jpg)
 
 
 lấy password jenkins random để đăng nhập
@@ -104,24 +104,24 @@ lấy password jenkins random để đăng nhập
 cat /var/lib/jenkins/secrets/initialAdminPassword
 
 
-![Selection_031](https://user-images.githubusercontent.com/19284401/55052575-0cafc480-508c-11e9-9f24-ca4b3518d6eb.png)
+![Selection_031](/images/31.png)
 
 nếu biết mình cần cài nhưng plugin nào thì bạn chọn SELECT PLUGIN, còn nếu ko biết thì chọn INSTALL SUGGESTED
 
 quá trình cài đặt plugin bắt đầu.
 
-![Selection_032](https://user-images.githubusercontent.com/19284401/55052729-8a73d000-508c-11e9-916f-240edb6b17d4.png)
+![Selection_032](/images/32.png)
 
 
 _**_chú ý nếu bạn đã thay đổi thư mục home của jenkins trong /etc/sysconfig/jenkins_ thì đường đã sẽ khác hãy đọc ở màn hình đăng nhập của jenkins**_
 
-![unlock-jenkins](https://user-images.githubusercontent.com/19284401/55051237-d4f24e00-5086-11e9-9414-01d9c7acb8c8.jpg)
+![unlock-jenkins](/images/unlock_2.jpg)
 
 sau khi login bằng password có được từ file initialAdminPassword, nó sẽ biến mất và bạn sẽ được chuyển đến trang tạo user.
 
 nhập đầy đủ các thông tin tài khoản
 
-![Selection_033](https://user-images.githubusercontent.com/19284401/55052815-c6a73080-508c-11e9-80ea-bcc3d9ff70ba.png)
+![Selection_033](/images/33.png)
 
 quá trình cài đặt jenkins đã hoàn tất.
 
@@ -136,7 +136,7 @@ Promoted Builds (dùng để đánh dấu các phiên bản buil khá có ích k
 
    http://jenkins.local:8080/pluginManager/
    
-![Selection_036](https://user-images.githubusercontent.com/19284401/55053480-e17aa480-508e-11e9-9256-0a0a842988ac.png)
+![Selection_036](/images/36.png)
 
 - nhập plugin cần cài vào ổ tìm kiếm.
 
@@ -156,7 +156,7 @@ chọn yes
 
 http://jenkins.local:8080/securityRealm/addUser
 
-![Selection_030](https://user-images.githubusercontent.com/19284401/55052980-5220c180-508d-11e9-9aa4-d4f53df08b15.png)
+![Selection_030](/images/30.png)
 
 **phân quyền**
 
@@ -164,34 +164,34 @@ từ memu chính chọn  Manage Jenkins >> Configure Global Security >> Project-
 
 http://jenkins.local:8080/configureSecurity/
 
-![Selection_008](https://user-images.githubusercontent.com/19284401/55063911-97ec8280-50ab-11e9-98f4-634ae70fa790.png)
+![Selection_008](/images/08.png)
 
 ### <a name="2.4"><a/>2.4 Tạo và cấu hình Job
 
 Từ menu chính chọn **New Item**
 
-![Selection_039](https://user-images.githubusercontent.com/19284401/55057833-eb0b0900-509c-11e9-8619-4323c67b319a.png)
+![Selection_039](/images/39.png)
 
 1 trang mới sẽ hiện ra
 
 nhập tên cho jobs và chọn type rồi click ok
 
-![Selection_041](https://user-images.githubusercontent.com/19284401/55057885-0f66e580-509d-11e9-8c26-a01e146181e7.png)
+![Selection_041](/images/41.png)
 
 tab general
 
 Như đã nói ở trên phần này mình sẽ nhắc đền **Project role**
 
-![Selection_043](https://user-images.githubusercontent.com/19284401/55058475-a1bbb900-509e-11e9-9b1e-019e3bc982c1.png)
+![Selection_043](/images/43.png)
 
-![Selection_044](https://user-images.githubusercontent.com/19284401/55058613-070faa00-509f-11e9-9d85-c8f85f759113.png)
+![Selection_044](/images/44.png)
 
 như trong hình mình đã add user 1 và cho user này có quyền buil cancel và workspace (tạo tác với thư mục workspacs)
 click vào Add buil step chọn Execute Shell
 
-![Selection_045](https://user-images.githubusercontent.com/19284401/55058853-d7ad6d00-509f-11e9-82f0-8309ce044333.png)
+![Selection_045](/images/45.png)
 
-![Selection_046](https://user-images.githubusercontent.com/19284401/55058855-d7ad6d00-509f-11e9-9de2-519f5ee1241b.png)
+![Selection_046](/images/46.png)
 trong phần Shell mình thực hiện 2 lệnh đơn giản.
 
 touch jenkins.txt (tạo ra file jenkins.txt)
@@ -199,7 +199,7 @@ touch jenkins.txt (tạo ra file jenkins.txt)
 ls $WORKSPACE       (hiển thị nội trong trong thư mục $WORKSPACE  )
 
 vì sao lại có  $WORKSPACE, bạn có thể xem trong **See the list of available environment variables** ngay phía dưới phần command
-![Selection_047](https://user-images.githubusercontent.com/19284401/55059196-f3fdd980-50a0-11e9-8ac8-714044e18ea3.png)
+![Selection_047](/images/47.png)
 
 click save 
 
@@ -207,8 +207,8 @@ công việc tạo jobs đã xong
 
 giờ sẽ chạy thử bằng user1 đã phần quyền ở phía trên
 Kết quả
-![Selection_009](https://user-images.githubusercontent.com/19284401/55064228-311b9900-50ac-11e9-9da8-91d5b0df1e08.png)
-![Selection_010](https://user-images.githubusercontent.com/19284401/55064298-50b2c180-50ac-11e9-8437-d171dcf5b6cf.png)
+![Selection_009](/images/09.png)
+![Selection_010](/images/10.png)
 
 như vậy là build thành công.
 
@@ -226,7 +226,7 @@ Cấu hình phần alert mail
 
 Tại menu chính Manage Jenkins >> Configure System >> Extended E-mail Notification
 
-![Selection_011](https://user-images.githubusercontent.com/19284401/55066238-f287dd80-50af-11e9-9dcb-f27671791021.png)
+![Selection_011](/images/11.png)
 
 
 SMTP server : server mail
@@ -253,7 +253,7 @@ Tại phần SSH Servers
 
 Nhập các thông tin của server cần deploy
 
-![Selection_012](https://user-images.githubusercontent.com/19284401/55067039-90c87300-50b1-11e9-87b7-ada52e78d7a0.png)
+![Selection_012](/images/12.png)
 
 
 Name: bạn nhập gì cũng được (để gợi nhớ đến server)
@@ -277,7 +277,7 @@ nếu bạn ko muốn phúc phạp vấn đề bạn có thể paste trực ti�
 sau khi cấu hình xong hãy click vào **test config**  ở góc bên phải. nếu có thông báo **success** thì cấu hình xong. nếu ngược lại thì các bạn biết phải làm gì rồi đó :D
 
 
-![Selection_013](https://user-images.githubusercontent.com/19284401/55067836-07b23b80-50b3-11e9-93cf-0e35a7e697ed.png)
+![Selection_013](/images/13.png)
 
 cuối cùng là **SAVE** 
 
@@ -285,11 +285,11 @@ vậy là cấu hình xong alertmail và ssh
 
 giờ đến cấu hình jobs
 
-![Selection_014](https://user-images.githubusercontent.com/19284401/55068094-96bf5380-50b3-11e9-9841-85546f76b6ca.png)
+![Selection_014](/images/14.png)
 
 Add Parameter >> git Parameter 
 
-![Selection_015](https://user-images.githubusercontent.com/19284401/55068241-f3227300-50b3-11e9-8dc1-5449a3323e08.png)
+![Selection_015](/images/15.png)
 
 
 Name: nhập bất cứ cái gì bạn muốn
@@ -299,7 +299,7 @@ Parameter Type: sẽ buil từ branch (mặc định là master nếu git của 
 
 
 **Source Code Management**
-![Selection_017](https://user-images.githubusercontent.com/19284401/55068429-662be980-50b4-11e9-8c5f-27b88ae6de10.png)
+![Selection_017](/images/17.png)
 
 Repository URL: là địa cảu git server bạn muốn pull (để đây mình dùng clone qua ssh nên sẽ cấu hình Credentials, nếu bạn clone từ http thì ko cần)
 
@@ -307,7 +307,7 @@ Branch Specifier (blank for 'any') : $BUILD gọi đển biến **Name** bạn v
 
 **Build Triggers**
 
-![Selection_018](https://user-images.githubusercontent.com/19284401/55068677-f66a2e80-50b4-11e9-8376-9c4e27908dca.png)
+![Selection_018](/images/18.png)
 
 Build when a change is pushed to BitBucket. ý nghĩ của nó là mỗi khi có commit thì jenkins sẽ từ động buil và deploy
 
@@ -345,7 +345,7 @@ gửi file hoặc thực hiện lên shell trước khi build. tức là lệnh 
 
 chọn Editable Email notification
 
-![Selection_022](https://user-images.githubusercontent.com/19284401/55070592-316e6100-50b9-11e9-8d61-5bd50502f31e.png)
+![Selection_022](/images/22.png)
 
 
 Project Recipient List : nhập vào địa chỉ email nhập thông báo sau khi build
@@ -356,7 +356,7 @@ click vào **Advance Setting** bên góc phải
 
 tìm đến 	**Triggers** bên góc trái chọn **Add Trigger** chọn tiếp **Always** xóa **Developer** đi chỉ để **Recipient list**
 
-![Selection_021](https://user-images.githubusercontent.com/19284401/55070352-a42b0c80-50b8-11e9-80e1-59e579cc157a.png)
+![Selection_021](/images/21.png)
 
 cuối cùng là **SAVE**
 
