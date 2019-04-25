@@ -67,7 +67,7 @@ yum install jenkins
 vi /etc/sysconfig/jenkins
 
 
-[Selection_029](/images/029.png)
+![Selection_029](./images/029.png)
 
 
 thay vào đó là thư mục mới VD: JENKINS_HOME="/data" (hãy chắc chắn trong máy của bạn đã có thư mục data)
@@ -96,7 +96,7 @@ firewall-cmd --reload
 
 bạn sẽ có 1 giao diện web như hình.
 
-[unlock-jenkins](/images/unlock_1.jpg)
+![unlock-jenkins](./images/unlock_1.jpg)
 
 
 lấy password jenkins random để đăng nhập
@@ -104,24 +104,24 @@ lấy password jenkins random để đăng nhập
 cat /var/lib/jenkins/secrets/initialAdminPassword
 
 
-[Selection_031](/images/31.png)
+![Selection_031](./images/31.png)
 
 nếu biết mình cần cài nhưng plugin nào thì bạn chọn SELECT PLUGIN, còn nếu ko biết thì chọn INSTALL SUGGESTED
 
 quá trình cài đặt plugin bắt đầu.
 
-[Selection_032](/images/32.png)
+![Selection_032](./images/32.png)
 
 
 _**_chú ý nếu bạn đã thay đổi thư mục home của jenkins trong /etc/sysconfig/jenkins_ thì đường đã sẽ khác hãy đọc ở màn hình đăng nhập của jenkins**_
 
-[unlock-jenkins](/images/unlock_2.jpg)
+![unlock-jenkins](./images/unlock_2.jpg)
 
 sau khi login bằng password có được từ file initialAdminPassword, nó sẽ biến mất và bạn sẽ được chuyển đến trang tạo user.
 
 nhập đầy đủ các thông tin tài khoản
 
-[Selection_033](/images/33.png)
+![Selection_033](./images/33.png)
 
 quá trình cài đặt jenkins đã hoàn tất.
 
